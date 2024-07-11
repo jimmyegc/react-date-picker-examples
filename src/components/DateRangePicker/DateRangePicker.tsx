@@ -1,12 +1,9 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-import { newDate } from "react-datepicker/dist/date_utils";
 import "react-datepicker/dist/react-datepicker.css";
-
 interface DRPProps {
   status: "enabled" | "disabled"
 }
-
 interface ListItem {
   id: string
   rawDate: string
@@ -57,7 +54,6 @@ export const DateRangePicker = ({ status }: DRPProps) => {
         startDate={startDate}
         endDate={endDate}
         onChange={handleChange}
-
         isClearable={true}
         selectsRange />
       <hr />
@@ -76,10 +72,8 @@ export const DateRangePicker = ({ status }: DRPProps) => {
         startDate={startDate}
         minDate={startDate}
       />
-
-
     </div>
-
+    {/* List of Selected Dates */}
     <div>
       {list.map((item) => (
         <div key={item.id}>
